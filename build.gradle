@@ -1,0 +1,41 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath "io.qameta.allure:allure-gradle:2.4"
+    }
+}
+
+plugins {
+    id 'java'
+    id "io.qameta.allure" version '2.5'
+}
+
+group 'io.fake'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+allure {
+    autoconfigure = true
+    version = '2.3.5'
+}
+
+test {
+    systemProperties System.getProperties()
+}
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+    testCompile 'com.codeborne:selenide:4.12.3'
+    testCompile 'io.qameta.allure:allure-selenide:2.7.0'
+}
+
+apply plugin: 'io.qameta.allure'
