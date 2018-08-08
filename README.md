@@ -1,2 +1,2 @@
 # selenide-comp-test
-to run launch: gradle clean test -Dselenide.browser=chrome && gradle allureReport
+to launch run: gradle clean test -Dselenide.browser=chrome && gradle allureReport
