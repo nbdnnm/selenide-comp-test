@@ -10,18 +10,18 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class ComputersPage {
 
-    public ComputersPage searchComputer(String computerName){
+    public ComputersPage searchComputer(String computerName) {
         $(byId("searchbox")).setValue(computerName);
         $(byId("searchsubmit")).click();
         return this;
     }
 
-    public EditComputerPage openComputer(String computerName){
-        $(byXpath("//*[text() = '"+computerName+"']")).click();
+    public EditComputerPage openComputer(String computerName) {
+        $(byXpath("//*[text() = '" + computerName + "']")).click();
         return new EditComputerPage();
     }
 
-    public NewComputerPage addComputer(){
+    public NewComputerPage addComputer() {
         $(byId("add")).click();
         return new NewComputerPage();
     }
@@ -30,6 +30,4 @@ public class ComputersPage {
     public SelenideElement getComputersTable() {
         return $(byClassName("computers"));
     }
-
-
 }
